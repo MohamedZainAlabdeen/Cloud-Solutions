@@ -1,0 +1,66 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+* {
+  scroll-behavior: smooth;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: "poppins";
+  src: url(../src/assets/font/poppins/Poppins-Medium.ttf);
+}
+
+body {
+  font-family: "poppins", sans-serif;
+}
+
+@layer base {
+  body {
+    @apply bg-[#161412] text-grayColor;
+  }
+  input,
+  textarea {
+    @apply bg-transparent outline-none;
+  }
+  .mainContainer {
+    @apply lg:w-[1250px] max-lg:px-5 mx-auto;
+  }
+  .flexCenter {
+    @apply flex items-center justify-center;
+  }
+  .flexBetween {
+    @apply flex items-center justify-between;
+  }
+  .scrollToTop {
+    @apply flexCenter fixed bottom-5 right-5 w-10 h-10 bg-darkColor rounded-md border border-lightColor cursor-pointer z-40 transition;
+  }
+}
+
+.hiddenScroll::-webkit-scrollbar {
+  display: none;
+}
+
+.gridCols_3 {
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+
+  @media (max-width: 450px) {
+    grid-template-columns: 100%;
+  }
+}
+.gridCols_4 {
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+
+  @media (max-width: 450px) {
+    grid-template-columns: 100%;
+  }
+}
+
+.shadow_01 {
+  box-shadow: 0px 8px 24px 0px rgba(0, 0, 0, 0.08);
+}
